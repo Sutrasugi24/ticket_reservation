@@ -74,7 +74,7 @@ class ConcertController extends Controller
         }
         $data = [
             'name'      => $request->name,
-            'concert_date'     => $request->concert_date,
+            'concert_date'   => $request->concert_date,
             'venue'      => $request->venue,
             'maximum_site'      => $request->maximum_site,
         ];
