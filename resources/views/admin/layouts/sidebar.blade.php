@@ -21,9 +21,17 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-compact" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active':'' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Dashboard</p>
+                    @can('read user')
+                        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active':'' }}">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    @endcan
+
+                    <li class="nav-header ml-2">ORDER TICKET</li>
+                    <a href="#" class="nav-link {{ request()->routeIs('ticket') ? 'active':'' }}">
+                        <i class="nav-icon fa-solid fa-cart-shopping"></i>
+                        <p>Ticket</p>
                     </a>
                 </li>@php $i = 1; @endphp
                 @foreach ($modulemenus as $menus)
@@ -100,8 +108,8 @@
                         </a>
                     </li>
                 @endcan
-                <li class="nav-header ml-2">SETTINGS</li>
                 @can('read setting')
+                <li class="nav-header ml-2">SETTINGS</li>
                     <li class="nav-item">
                         <a href="{{ route('setting.index') }}" class="nav-link {{ request()->routeIs('setting.index') ? 'active':'' }}">
                             <i class="fas fa-cog nav-icon"></i>
