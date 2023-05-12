@@ -218,7 +218,7 @@
                             </div>
                         </div>
                         <div class="input-group">
-                            <label>Vanue</label>
+                            <label>Venue</label>
                             <div class="input-group">
                                 <input type="text" class="form-control @error('venue') is-invalid @enderror" placeholder="Concert Venue" name="venue" id="venue" value="{{ old('venue') }}">
                                 @error('venue')

@@ -42,7 +42,7 @@ class ConcertController extends Controller
             Alert::success('Pemberitahuan', 'Data <b>' . $concert->name . '</b> berhasil dibuat')->toToast()->toHtml();
         } catch (\Throwable $th) {
             DB::rollback();
-            Alert::error('Pemberitahuan', 'Data <b> </b> gagal dibuat : ' . $th->getMessage())->toToast()->toHtml();
+            Alert::error('Pemberitahuan', 'Data <b>' . $concert->name . ' </b> gagal dibuat : ' . $th->getMessage())->toToast()->toHtml();
         }
         return back();
     }
@@ -81,7 +81,7 @@ class ConcertController extends Controller
 
         DB::beginTransaction();
         try {
-            $concert = Concert::with('concerts')->findOrFail($request->id);
+            $concert = Concert::findOrFail($request->id);
             $concert->update($data);
             DB::commit();
             Alert::success('Pemberitahuan', 'Data <b>' . $concert->name . '</b> berhasil disimpan')->toToast()->toHtml();

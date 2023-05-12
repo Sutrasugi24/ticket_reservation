@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('concert_user', function (Blueprint $table) {
-            // $table->foreignId('concert_id')->constrained('concerts')->onDelete('restrict');
-            // $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
-        });
+        // Schema::create('concert_user', function (Blueprint $table) {
+        //     $table->foreignId('concert_id')->constrained('concerts')->onDelete('restrict');
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
+        // });
     }
 
     /**
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('concert_user');
+        // Schema::dropIfExists('concert_user');
     }
 };
