@@ -17,6 +17,9 @@ class UserSeeder extends Seeder
     {
         $superadmin = User::create([
             'name'      => 'Superadmin',
+            'address'   => '-',
+            'birth' => '1996-01-22',
+            'phone'   => '089656771929',
             'email'     => 'superadmin@superadmin.com',
             'password'  => bcrypt('superadmin')
         ]);
@@ -24,6 +27,9 @@ class UserSeeder extends Seeder
 
         $admin = User::create([
             'name'      => 'Admin',
+            'address'   => '-',
+            'birth' => '1996-02-21',
+            'phone'   => '089677771111',
             'email'     => 'admin@admin.com',
             'password'  => bcrypt('admin')
         ]);
@@ -31,6 +37,9 @@ class UserSeeder extends Seeder
 
         $operator = User::create([
             'name'      => 'Operator',
+            'address'   => '-',
+            'birth' => '1996-02-21',
+            'phone'   => '082165676576',
             'email'     => 'operator@operator.com',
             'password'  => bcrypt('operator')
         ]);

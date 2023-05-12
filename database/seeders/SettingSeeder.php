@@ -17,7 +17,7 @@ class SettingSeeder extends Seeder
     {
         Setting::create([
             'key'       => 'app_name',
-            'value'     => 'Laravel RBAC Starter',
+            'value'     => 'Ticket Reservation',
             'name'      => 'Application Short Name',
             'type'      => 'text',
             'category'  => 'information'
@@ -54,7 +54,7 @@ class SettingSeeder extends Seeder
         ]);
         Setting::create([
             'key'       => 'app_map_loaction',
-            'value'     => 'https://www.google.com/maps/place/Kajen,+Kec.+Kajen,+Kabupaten+Pekalongan,+Jawa+Tengah/@-7.0319606,109.5291791,13z/data=!3m1!4b1!4m5!3m4!1s0x2e6fe01fab873f61:0xc109484cee38731e!8m2!3d-7.0269252!4d109.5811772',
+            'value'     => '-',
             'name'      => 'Application Map Location',
             'type'      => 'textarea',
             'category'  => 'contact'
