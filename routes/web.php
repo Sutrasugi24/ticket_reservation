@@ -16,7 +16,6 @@ Route::get('/', function () {
 })->name('index');
 
 Auth::routes([
-    'register'  => false,
     'reset'     => false,
     'confirm'   => false
 ]);
