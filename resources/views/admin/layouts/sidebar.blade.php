@@ -37,7 +37,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-header ml-2">CONCERT TICKET/li>
+                    <li class="nav-header ml-2">CONCERT TICKET</li>
                     @can('read concert')
                     <li class="nav-item">
                         <a href="{{ route('concert.index') }}" class="nav-link {{ request()->routeIs('concert') ? 'active':'' }}">

@@ -10,8 +10,8 @@ class Concert extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'date',
+        'concert_date',
         'venue',
-        'maximu_site',
+        'maximum_site',
     ];
 }

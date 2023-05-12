@@ -49,7 +49,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($concert as $i)
+                                        @foreach ($data as $i)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $i->name }}</td>
@@ -238,6 +238,10 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="old_name" id="old_name">
+                    <input type="hidden" name="old_concert_date" id="old_concert_date">
+                    <input type="hidden" name="old_venue" id="old_venue">
+                    <input type="hidden" name="old_maximum_site" id="old_maximum_site">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
