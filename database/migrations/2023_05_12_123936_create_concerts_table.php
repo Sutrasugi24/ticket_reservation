@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('concert_date');
             $table->string('venue');
-            $table->bigInteger('maximux_site');
+            $table->bigInteger('maximum_site');
         });
     }
 

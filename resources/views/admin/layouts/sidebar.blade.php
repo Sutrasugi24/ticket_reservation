@@ -29,12 +29,23 @@
                     @endcan
 
                     <li class="nav-header ml-2">ORDER TICKET</li>
+                    {{-- Root for users order ticket concert --}}
                     <li class="nav-item">
-                        <a href="#" class="nav-link {{ request()->routeIs('ticket') ? 'active':'' }}">
+                        <a href="#" class="nav-link {{ request()->routeIs('concert') ? 'active':'' }}"> 
                             <i class="nav-icon fas fa-pen"></i>
                             <p>Ticket</p>
                         </a>
                     </li>
+
+                    <li class="nav-header ml-2">CONCERT TICKET/li>
+                    @can('read concert')
+                    <li class="nav-item">
+                        <a href="{{ route('concert.index') }}" class="nav-link {{ request()->routeIs('concert') ? 'active':'' }}">
+                            <i class="nav-icon fas fa-ticket"></i>
+                            <p>Concert</p>
+                        </a>
+                    </li>
+                    @endcan
                 </li>@php $i = 1; @endphp
                 @foreach ($modulemenus as $menus)
                     @if ($menus['menu_count'] == 1)

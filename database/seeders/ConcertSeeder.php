@@ -17,8 +17,8 @@ class ConcertSeeder extends Seeder
     {
         Concert::create([
             'name'          => 'Coldplay',
-            'date'    => '2023-10-11',
-            'maximux_site'    => 100,
+            'concert_date'    => '2023-10-11',
+            'maximum_site'    => 100,
             'venue' => 'Bandung',
         ]);
     }

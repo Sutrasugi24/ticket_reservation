@@ -7,6 +7,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ConcertController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Role;
@@ -61,5 +62,13 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::post('setting/show', 'show')->middleware(['permission:read setting'])->name('setting.show');
         Route::put('setting', 'update')->middleware(['permission:update setting'])->name('setting.update');
         Route::delete('setting', 'destroy')->middleware(['permission:delete setting'])->name('setting.destroy');
+    });
+
+    Route::controller(ConcertController::class)->group(function () {
+        Route::get('concert', 'index')->middleware(['permission:read concert'])->name('concert.index');
+        Route::post('concert', 'store')->middleware(['permission:create concert'])->name('concert.store');
+        Route::post('concert/show', 'show')->middleware(['permission:read concert'])->name('concert.show');
+        Route::put('concert', 'update')->middleware(['permission:update concert'])->name('concert.update');
+        Route::delete('concert', 'destroy')->middleware(['permission:delete concert'])->name('concert.destroy');
     });
 });
