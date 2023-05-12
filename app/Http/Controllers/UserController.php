@@ -25,6 +25,9 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name'      => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'birth' => ['required'],
+            'phone' => ['required', 'string', 'max:13'],
             'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'  => ['required', 'string'],
             'role'      => ['required']
@@ -37,6 +40,9 @@ class UserController extends Controller
         try {
             $user = User::create([
                 'name'      => $request->name,
+                'address'     => $request->address,
+                'birth'      => $request->birth,
+                'phone'      => $request->phone,
                 'email'     => $request->email,
                 'password'  => bcrypt($request->password)
             ]);
@@ -64,6 +70,9 @@ class UserController extends Controller
     {
         $rules = [
             'name'      => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'birth' => ['required'],
+            'phone' => ['required', 'string', 'max:13'],
             'password'  => ['nullable', 'string'],
             'role'      => ['required']
         ];
@@ -82,6 +91,9 @@ class UserController extends Controller
         }
         $data = [
             'name'      => $request->name,
+            'address'      => $request->address,
+            'birth'      => $request->birth,
+            'phone'      => $request->phone,
             'email'     => $request->email,
         ];
         if (!empty($request->password)) {

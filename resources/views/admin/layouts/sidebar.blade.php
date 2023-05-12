@@ -29,10 +29,12 @@
                     @endcan
 
                     <li class="nav-header ml-2">ORDER TICKET</li>
-                    <a href="#" class="nav-link {{ request()->routeIs('ticket') ? 'active':'' }}">
-                        <i class="nav-icon fa-solid fa-cart-shopping"></i>
-                        <p>Ticket</p>
-                    </a>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link {{ request()->routeIs('ticket') ? 'active':'' }}">
+                            <i class="nav-icon fas fa-pen"></i>
+                            <p>Ticket</p>
+                        </a>
+                    </li>
                 </li>@php $i = 1; @endphp
                 @foreach ($modulemenus as $menus)
                     @if ($menus['menu_count'] == 1)

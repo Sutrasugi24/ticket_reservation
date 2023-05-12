@@ -40,6 +40,9 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
+                                            <th>Adress</th>
+                                            <th>Birth of Date</th>
+                                            <th>Phone</th>
                                             <th>Email</th>
                                             <th>Role</th>
                                             <th>Updated</th>
@@ -53,6 +56,9 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $i->name }}</td>
+                                                <td>{{ $i->address }}</td>
+                                                <td>{{ $i->birth }}</td>
+                                                <td>{{ $i->phone }}</td>
                                                 <td>{{ $i->email }}</td>
                                                 <td>{{ implode(",", $i->getRoleNames()->toArray()) }}</td>
                                                 <td>{{ $i->updated_at }}</td>
@@ -103,6 +109,9 @@
                     success: function(data) {
                         var data = data.data;
                         $("#name").val(data.name);
+                        $("#address").val(data.address);
+                        $("#birth").val(data.birth);
+                        $("#phone").val(data.phone);
                         $("#email").val(data.email);
                         $("#old_email").val(data.email);
                         $("#role").val(data.role);
@@ -143,6 +152,33 @@
                             <div class="input-group">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{ old('name') }}">
                                 @error('name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Address</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Address" name="address" value="{{ old('address') }}">
+                                @error('address')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Birth of Date</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control @error('birth') is-invalid @enderror" placeholder="Birth of Date" name="birth" value="{{ old('birth') }}">
+                                @error('birth')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control @error('phone') is-invalid @enderror" placeholder="Phone Number" name="phone" value="{{ old('phone') }}">
+                                @error('phone')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -208,6 +244,33 @@
                             <div class="input-group">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" id="name" value="{{ old('name') }}">
                                 @error('name')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Address</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Address" name="address" id="address" value="{{ old('address') }}">
+                                @error('address')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Date of Birth</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control @error('birth') is-invalid @enderror" placeholder="Date of Birth" name="birth" id="birth" value="{{ old('birth') }}">
+                                @error('birth')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" placeholder="Phone Number" name="phone" id="phone" value="{{ old('phone') }}">
+                                @error('phone')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
