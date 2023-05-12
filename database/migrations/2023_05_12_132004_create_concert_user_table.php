@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('concert_user', function (Blueprint $table) {
-            $table->foreignId('concert_id')->constrained('concerts')->onDelete('restrict');
-            $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
+            // $table->foreignId('concert_id')->constrained('concerts')->onDelete('restrict');
+            // $table->foreignId('user_id')->constrained('users')->onDelete('restrict');
         });
     }
 
